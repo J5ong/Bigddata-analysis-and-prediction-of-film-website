@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="referrer" content="no-referrer" />
+	<title>电影数据分析展示</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="./css/examples.css" />
+	<link rel="stylesheet" type="text/css" href="./css/user.css" />
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section active" id="section0">
+		<ul class="nav nav-pills" style="position: absolute;top: 0px; right: 0px;">
+			<li role="presentation"><a href="#"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span></a></li>
+			<li role="presentation"><a href="#">名词解析</a></li>
+			<li role="presentation"><a href="#">团队介绍</a></li>
+			<li role="presentation"><a href="#"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span></a></li>
+		</ul>
+		<h1><b>电影数据分析</b></h1>
+		<br>
+		<big>洞察市场先机，高效转化效益</big>
+		<br>
+		<a class="add_icon" href="#secondPage"><span class="glyphicon glyphicon-share-alt" style="display: none;"></span>分析页面一</a>
+		<a class="add_icon" href="#3rdPage"><span class="glyphicon glyphicon-share-alt" style="display: none;"></span>分析页面二</a>
+		<a class="add_icon" href="#lastPage"><span class="glyphicon glyphicon-share-alt" style="display: none;"></span>预测模型页</a>
+	</div>
+	<div class="section" id="section1">
+		<div class="container-fluid">
+			<div class="row">
+					<div class="col-md-12">
+						<!-- 类型选择 -->
+						<div class="btn-group" data-toggle="buttons" style="width: 40%;">
+							<label class="btn btn-info select-year active">
+								<input type="checkbox" autocomplete="off">全选
+							</label>
+							<label class="btn btn-info year active">
+								<input type="radio" autocomplete="off">2015年
+							</label>
+							<label class="btn btn-info year active">
+								<input type="radio" autocomplete="off">2016年
+							</label>
+							<label class="btn btn-info year active">
+								<input type="radio" autocomplete="off">2017年
+							</label>
+							<label class="btn btn-info year active">
+								<input type="radio" autocomplete="off">2018年
+							</label>
+						</div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div id="film_type" style="width: 100%;height: 300%;"></div>
+					<div id="film_boxoffice" style="width: 100%;height: 300%;"></div>
+				</div>
+				<div class="col-md-6">
+					<div id="world_map" style="width: 100%;height: 650%;"></div>
+				</div>
+				<div class="col-md-3">
+					<div id="film_language" style="width: 100%;height: 300%;"></div>
+					<div id="film_quantity" style="width: 100%;height: 300%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="film_grade" style="width: 100%;height: 300%;"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- 类型选择 -->
+					<div class="btn-group" data-toggle="buttons" style="width: 90%;">
+						<label class="btn btn-warning select-type">
+							<input type="checkbox" autocomplete="off">全选
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off" checked>剧情
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">爱情
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">科幻
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">动画
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">动作
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">喜剧
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">冒险
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">战争
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">音乐
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">悬疑
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">恐怖
+						</label>
+						<label class="btn btn-warning type">
+							<input type="checkbox" autocomplete="off">惊悚
+						</label>
+					</div>
+					<!-- 国家选择 -->
+					<div class="btn-group" data-toggle="buttons" style="width: 90%;">
+						<label class="btn btn-warning select-country">
+							<input type="checkbox" autocomplete="off">全选
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">中国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">美国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">日本
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">印度
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">意大利
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">英国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">德国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">法国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">澳大利亚
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">韩国
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">新西兰
+						</label>
+						<label class="btn btn-warning country">
+							<input type="checkbox" autocomplete="off">波兰
+						</label>
+					</div>
+					<!-- 语言选择 -->
+					<div class="btn-group" data-toggle="buttons" style="width: 90%;">
+						<label class="btn btn-warning select-language">
+							<input type="checkbox" autocomplete="off">全选
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">普通话
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">上海话
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">重庆话
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">闽南语
+						</label>
+						<label class="btn btn-warning language active">
+							<input type="checkbox" autocomplete="off">粤语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">英语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">法语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">西班牙语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">意大利语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">阿拉伯语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">印地语
+						</label>
+						<label class="btn btn-warning language">
+							<input type="checkbox" autocomplete="off">俄语
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div id="time_and_grade1" style="width: 100%;height: 300%;"></div>
+				</div>
+				<div class="col-md-6">
+					<div id="time_and_grade2" style="width: 100%;height: 300%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section3">
+		<div class="container-fluid">
+			<!-- 第一行 -->
+			<div class="row">
+				<div class="col-md-3">
+					<div class="swiper-list-stack swiper-list">
+						<div class="swiper-main-stack swiper-main"></div>
+						<div id="prev-stack" class="btn leftBtn"></div>
+						<div id="next-stack" class="btn rightBtn"></div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="panel panel-default">
+						<div class="panel-body container-fluid film_description">
+							<span class="col-md-4">电影名称：</span>
+							<span class="col-md-5">类型：</span>
+							<span class="col-md-4">制片国家/地区：</span>
+							<span class="col-md-4">语言：</span>
+							<span class="col-md-4">上映日期：</span>
+							<span class="col-md-4">导演：</span>
+							<span class="col-md-4">编剧：</span>
+							<span class="col-md-4">主演：</span>
+							<span class="col-md-12 intro">电影简介：</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 第二行 -->
+			<div class="row">
+				<div class="col-md-3">
+					<div id="attendence" style="width: 100%;height: 250%;"></div>
+					<div id="boxoffice" style="width: 100%;height: 250%;"></div>
+					<button type="button" id="switch1" class="btn btn-default" aria-label="Left Align">
+						<span class="glyphicon glyphicon-repeat" aria-hidden="true"> 切换输入数据模式 </span>
+					</button>
+				</div>
+				<div class="col-md-9">
+					<div id="principle" style="width: 100%;height: 35em">
+						<button type="button" class="btn btn-default" aria-label="Left Align">
+							<span class="glyphicon glyphicon-indent-left" id="btn-criticalpoint" aria-hidden="true"> 排片比临界点预测模式 </span>
+						</button>
+						<button type="button" class="btn btn-default" aria-label="Left Align">
+							<span class="glyphicon glyphicon-film" id="btn-boxoffice" aria-hidden="true"> 票房预测模式 </span>
+						</button>
+						<div id="predictive_value"><span>30</span><span>天</span></div>
+						<div id="prediction_point" style="width: 90%;height: 60%;"></div>
+						<!-- <div id="data_input" style="width: 100%;height: 60%;"> -->
+						<form role="form" method="post" id="data_input" style="width: 100%;height: 60%;">
+							<span>七天上座率输入</span>
+							<div class="input-group" id="input_attendence">
+								<input type="text" name="attendence1" class="form-control small" placeholder="day1">
+								<input type="text" name="attendence2" class="form-control small" placeholder="day2">
+								<input type="text" name="attendence3" class="form-control small" placeholder="day3">
+								<input type="text" name="attendence4" class="form-control small" placeholder="day4">
+								<input type="text" name="attendence5" class="form-control small" placeholder="day5">
+								<input type="text" name="attendence6" class="form-control small" placeholder="day6">
+								<input type="text" name="attendence7" class="form-control small" placeholder="day7">
+							</div>
+							<span>七天排片占比输入</span>
+							<div class="input-group" id="input_film_ratio">
+								<input type="text" name="film_ratio1" class="form-control small" placeholder="day1">
+								<input type="text" name="film_ratio2" class="form-control small" placeholder="day2">
+								<input type="text" name="film_ratio3" class="form-control small" placeholder="day3">
+								<input type="text" name="film_ratio4" class="form-control small" placeholder="day4">
+								<input type="text" name="film_ratio5" class="form-control small" placeholder="day5">
+								<input type="text" name="film_ratio6" class="form-control small" placeholder="day6">
+								<input type="text" name="film_ratio7" class="form-control small" placeholder="day7">
+							</div>
+							<div class="input-group" id="input_box_office">
+								<input type="text" name="box_office1" class="form-control small" placeholder="day1">
+								<input type="text" name="box_office2" class="form-control small" placeholder="day2">
+								<input type="text" name="box_office3" class="form-control small" placeholder="day3">
+								<input type="text" name="box_office4" class="form-control small" placeholder="day4">
+								<input type="text" name="box_office5" class="form-control small" placeholder="day5">
+								<input type="text" name="box_office6" class="form-control small" placeholder="day6">
+								<input type="text" name="box_office7" class="form-control small" placeholder="day7">
+							</div>
+							<div class="form-group">
+								<select name="auction_calendar" class="form-control single-choice">
+									<option value="贺岁档">贺岁档</option>
+									<option value="暑假档">暑假档</option>
+									<option value="国庆档">国庆档</option>
+									<option value="五一档">五一档</option>
+									<option value="其他档">其他档</option>
+								</select>
+								<select name="type"class="selectpicker check-box" multiple>
+									<option value="剧情">剧情</option>
+									<option value="喜剧">喜剧</option>
+									<option value="科幻">科幻</option>
+									<option value="奇幻">奇幻</option>
+									<option value="动画">动画</option>
+									<option value="动作">动作</option>
+									<option value="冒险">冒险</option>
+									<option value="家庭">家庭</option>
+									<option value="传记">传记</option>
+									<option value="悬疑">悬疑</option>
+									<option value="恐怖">恐怖</option>
+									<option value="犯罪">犯罪</option>
+									<option value="爱情">爱情</option>
+									<option value="古装">古装</option>
+									<option value="武侠">武侠</option>
+									<option value="灾难">灾难</option>
+									<option value="历史">历史</option>
+								</select>
+								<select name="language" class="form-control single-choice">
+									<option value="中文">中文</option>
+									<option value="英文">英文</option>
+									<option value="其他">其他</option>
+								</select>
+							</div>
+							<button type="submit" class="btn btn-default" aria-label="Left Align">
+								<span id="submit_input_data" aria-hidden="true"> 开始预测 </span>
+							</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+<!-- 大体样式 -->
+<script type="text/javascript" src="./dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./dist/fullpage.js"></script>
+<script type="text/javascript">
+	var myFullpage = new fullpage('#fullpage', {
+		sectionsColor: ['#FF5F45', '#D8F2F1', '#FAFAD2', '#333333', '#7BAABE', '#ccddff', '#AFEEEE'],
+		anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage'],
+		css3: true,
+		loopBottom: true,
+		navigation: true,
+		navigationPosition: 'right',
+		navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+		responsiveWidth: 900,
+	});
+</script>
+
+<!-- 引入echarts -->
+<script src="js/echarts.min.js"></script>
+<script src="js/vintage.js"></script>
+<script src="js/shine.js"></script>
+<script src="js/infographic.js"></script>
+<script src="js/roma.js"></script>
+<script src="js/dark.js"></script>
+
+<!-- 通用js定义 -->
+<script type="text/javascript">
+	//全选与反选功能
+	function selectAll(select_all){
+		select_all.siblings("label").each( function() {
+			$(this).addClass('active');
+		});
+	}
+	function invertSelect(select_all){
+		select_all.siblings("label").each( function() {
+			if($(this).hasClass('active')) {
+				$(this).removeClass('active');
+			};
+		});
+	}
+	//range功能 传参 起始,结尾,步距
+	const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+</script>
+<!-- 通用js定义 end-->
+
+<!-- 首页 -->
+<script type="text/javascript">
+	$(".add_icon").hover(
+			function handlerIn(){
+				$(this).children('span').css('display','')
+				$(this).css('cursor','pointer')
+			},
+			function handlerOut(){
+				$(this).children('span').css('display','none')
+				$(this).css('cursor','default')
+			}
+		)
+	$("#jump1").click(
+			function(){
+
+			}
+		)
+</script>
+<!-- 首页 end-->
+
+<!-- 分析页面一 -->
+<script type="text/javascript">
+	// 分析页面一(section1)渲染脚本
+
+	//按钮组
+	$('.select-year').click(function(){
+		if($('.select-year').hasClass('active')) {
+			invertSelect($('.select-year'))
+		}
+		else {
+			selectAll($('.select-year'))
+		}
+	})
+
+	
+	// 电影类型饼状图
+	var film_type = echarts.init(document.getElementById('film_type'),'infographic');
+	var option_film_type = {
+		title : {
+			text: '电影类型',
+			textStyle: {color:'rgba(105,105,105, 0.9)',fontWeight:'bold',},
+			x:'center'
+		},
+		tooltip: {
+			trigger: 'item',
+			formatter: "{b}类占比:{d}%"
+		},
+		legend: {
+			type: 'scroll',
+			orient: 'vertical',
+			x: 'left',
+			width: '30%',
+			height: '60%',
+			pageIconSize: 10,
+			textStyle: {
+				fontSize: '70%',
+			},
+		},
+		calculable : true,
+		animation: true,
+		animationDurationUpdate: 900,
+		animationDelayUpdate: 10,
+		series : [
+			{
+				name:'面积模式',
+				type:'pie',
+				radius: ['25%', '68%'],
+				label: {
+					normal: {
+						show: false,
+						position: 'center',
+					},
+					emphasis: {
+						show: true,
+					}
+				},
+				data:[]
+			}
+		]
+	};
+	film_type.setOption(option_film_type);
+	function film_type_rendering(){
+		return function(data_json){
+			film_type.setOption({
+				series: [{data: data_json}]
+			})
+		}
+	}
+
+	// 电影语言饼状图
+	var film_language = echarts.init(document.getElementById('film_language'),'infographic');
+	var option_film_language = {
+		title : {
+			text: '电影语言',
+			textStyle: {color:'rgba(105,105,105, 0.9)',fontWeight:'bold',},
+			x:'center'
+		},
+		legend: {
+			type: 'scroll',
+			orient: 'vertical',
+			x: 'right',
+			width: '30%',
+			height: '60%',
+			pageIconSize: 10,
+			textStyle: {
+				fontSize: '68%',
+			},
+		},
+		calculable : true,
+		series : [
+			{
+				name:'面积模式',
+				type:'pie',
+				radius : '68%',
+				label: {
+					normal: {
+						show: false,
+					},
+					emphasis: {
+						show: true,
+					}
+				},
+				data:[]
+			}
+		]
+	};
+	film_language.setOption(option_film_language);
+	function film_language_rendering(){
+		return function(data_json){
+			film_language.setOption({
+				series: [{data: data_json}]
+			})
+		}
+	}
+
+	// 年度票房折线图
+	var film_boxoffice = echarts.init(document.getElementById('film_boxoffice'),'roma');
+	var option_film_boxoffice = {
+
+		// Make gradient line here
+		visualMap: {
+			show: false,
+			type: 'continuous',
+			seriesIndex: 1,
+			dimension: 0,
+			min: 0,
+			max: 49
+		},
+
+
+		title: {
+			left: 'center',
+			text: '年度票房',
+			textStyle: {color:'rgba(105,105,105, 0.9)'},
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		xAxis: [{
+			name: '月',
+			data: ["1","2","3","4","5","6","7","8","9","10","11","12"]
+		}],
+		yAxis: [{
+			name: '亿元',
+			splitLine: {show: false}
+		}],
+		series: [{
+			type: 'line',
+			showSymbol: false,
+			data: []
+		}]
+	};
+	film_boxoffice.setOption(option_film_boxoffice);
+	function film_boxoffice_rendering(){
+		return function(data_json){
+			var boxoffice_vaule = data_json[0].map(x => x*0.00000001)
+			film_boxoffice.setOption({
+				series: [{
+					data: boxoffice_vaule
+				}]
+			});
+		}
+	}
+
+	// 上映电影数量折线图
+	var film_quantity = echarts.init(document.getElementById('film_quantity'),'roma');
+	var option_film_quantity = {
+		visualMap: {
+			show: false,
+			type: 'continuous',
+			seriesIndex: 1,
+			dimension: 0,
+		},
+
+		title: {
+			left: 'center',
+			text: '上映电影数量统计',
+			textStyle: {color:'rgba(105,105,105, 0.9)'},
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		xAxis: [{
+			name: '月',
+			data: ["1","2","3","4","5","6","7","8","9","10","11","12"]
+		}],
+		yAxis: [{
+			name: '部',
+			splitLine: {show: false}
+		}],
+		series: [{
+			type: 'line',
+			showSymbol: false,
+			data: []
+		}]
+	};
+	film_quantity.setOption(option_film_quantity);
+	function film_quantity_rendering(){
+		return function(data_json){
+			film_quantity.setOption({
+				series: [{
+					data: data_json[0]
+				}]
+			});
+		}
+	}
+
+	// 世界地图饼状图
+	$.get('./js/world.json', function (worldJson) {
+		// 注册世界地图
+		echarts.registerMap('world', worldJson);
+	});
+	var world_map = echarts.init(document.getElementById('world_map'),'roma');
+	var option_world_map = {
+		title: {
+			left: 'center',
+			text: '不同国家电影产量统计',
+			textStyle: {color:'rgba(105,105,105, 0.9)'},
+		},
+		tooltip: {
+			show: true,
+			formatter: '{b}：{c}部'
+		},
+		visualMap: {
+			left: '10%',
+			type: 'piecewise',
+			textStyle: {
+				color: 'rgba(15,15,15, 0.9)',
+			},
+			pieces: [
+				{min: 1500}, // 不指定 max，表示 max 为无限大（Infinity）。
+				{min: 900, max: 1500},
+				{min: 310, max: 1000},
+				{min: 200, max: 300},
+				{min: 50, max: 200},
+				{min: 0, max: 50,},
+			],
+			inRange: {
+				color: ['#AFEEEE', 'yellow', 'orangered'],
+				symbolSize: [30, 100]
+			},
+			outOfRange: {
+				color: '#FFDEAD',
+			}
+		},
+		series: [{
+			type: 'map',
+			map: 'world',
+			// roam: true,
+			aspectScale: 0.68,
+			zoom: 1.2,
+			label: {
+				normal: {
+					show: false,
+				},
+				emphasis: {
+					show: false,
+				}
+			},
+			itemStyle: {
+				normal: {
+					areaColor:'#FFDEAD',
+				},
+				emphasis: {
+					areaColor: '#9400D3',
+				}
+			},
+			data: [],
+		}]
+	};
+	world_map.setOption(option_world_map);
+	function film_country_rendering(){
+		return function(data_json){
+			world_map.setOption({
+				series: [{data: data_json}]
+			})
+		}
+	}
+
+	// 渲染方法
+	function rendering(){
+		text_year = $('.year.active').text().trim().replace(/\s+/g,",")
+		postdata1 = {
+			name:'film_type',
+			type:'pie',
+			year:text_year
+		}
+		postdata2 = {
+			name:'film_language',
+			type:'pie',
+			year:text_year
+		}
+		postdata3 = {
+			name:'film_boxoffice',
+			type:'line',
+			year:text_year
+		}
+		postdata4 = {
+			name:'film_quantity',
+			type:'line',
+			year:text_year
+		}
+		postdata5 = {
+			name:'film_country',
+			type:'map',
+			year:text_year
+		}
+		$.post("http://127.0.0.1:10086/inquire",postdata1,film_type_rendering(),"json")
+		$.post("http://127.0.0.1:10086/inquire",postdata2,film_language_rendering(),"json")
+		$.post("http://127.0.0.1:10086/inquire",postdata3,film_boxoffice_rendering(),"json")
+		$.post("http://127.0.0.1:10086/inquire",postdata4,film_quantity_rendering(),"json")
+		$.post("http://127.0.0.1:10086/inquire",postdata5,film_country_rendering(),"json")
+	}
+
+	// 渲染地图
+	text_year = "2015年,2016年,2017年,2018年"
+	postdata5 = {name:'film_country',type:'map',year:text_year};
+	$.post("http://127.0.0.1:10086/inquire",postdata5,film_country_rendering(),"json");
+
+	// MutationObserver突变监听，初始化
+	var section1_observer = new MutationObserver(function (mutations, observer){
+		mutations.some(function (mutation) {
+			var $search = new RegExp('active')
+			var $class_name = String(mutation.target.classList)
+			// console.log(mutation)
+			if ($search.test($class_name)) {}
+			//渲染
+			rendering()
+			//some,是另一种forEach,在return true时会跳出循环
+			return true
+		})
+	})
+	// 启用observe方法 监听section1
+	var $section1 = document.getElementById('section1');
+	var option_observer = {
+		attributes: true,
+		attributeFilter: ['class'],
+	}
+	section1_observer.observe($section1,option_observer);
+
+	// 点击重新渲染
+	$('.btn-info').click(function(){
+		$(document).ready(function(){
+			rendering()
+		})
+	})
+</script>
+<!-- 分析页面一 end-->
+
+<!-- 分析页面二 -->
+<script type="text/javascript">
+	// 按钮
+	$('.select-type').click(function(){
+		if($('.select-type').hasClass('active')) {
+			invertSelect($('.select-type'))
+		}
+		else {
+			selectAll($('.select-type'))
+		}
+	})
+	$('.select-country').click(function(){
+		if($('.select-country').hasClass('active')) {
+			invertSelect($('.select-country'))
+		}
+		else {
+			selectAll($('.select-country'))
+		}
+	})
+	$('.select-language').click(function(){
+		if($('.select-language').hasClass('active')) {
+			invertSelect($('.select-language'))
+		}
+		else {
+			selectAll($('.select-language'))
+		}
+	})
+
+
+	//电影评分统计图
+	var film_grade = echarts.init(document.getElementById('film_grade'),'roma');
+	var option_film_grade = {
+		title: {
+			text: '电影评分统计',
+			left: 'center',
+		},
+		xAxis: {
+			type: 'category',
+			data: []
+		},
+		yAxis: {
+			type: 'value'
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		series: [{
+			data: [],
+			type: 'line',
+			itemStyle: {
+				normal: {
+					borderWidth: 2,
+					borderColor: 'blue',
+					color: 'red'
+				}
+			}
+		}]
+	};
+	film_grade.setOption(option_film_grade);
+	function film_grade_rendering(){
+		return function(data_json){
+			var dateList = data_json.map(function (item) {
+				return item[0];
+			});
+			var valueList = data_json.map(function (item) {
+				return item[1];
+			});
+			film_grade.setOption({
+				xAxis: [{
+					data: dateList
+						}],
+				series: [{
+					data: valueList
+				}]
+			});
+		}
+	}
+
+	//上映时间评分关系图
+	var time_and_grade1 = echarts.init(document.getElementById('time_and_grade1'),'roma');
+	var option_time_and_grade1 = {
+		title: {
+			text: '上映时间-评分关系',
+			left: 'center',
+		},
+		tooltip: {
+			trigger: 'item',
+		},
+		xAxis: {
+			min: 1900,
+			max: 2025,
+		},
+		yAxis: {
+			min: 0,
+			max: 10,
+		},
+		series: [{
+			symbolSize: 3,
+			data: [],
+			type: 'scatter'
+		}]
+	};
+	time_and_grade1.setOption(option_time_and_grade1);
+
+	//片长评分关系图
+	var time_and_grade2 = echarts.init(document.getElementById('time_and_grade2'),'roma');
+	var option_time_and_grade2 = {
+		title: {
+			text: '片长-评分关系',
+			left: 'center',
+		},
+		xAxis: {
+			min: 0,
+			max: 500,
+		},
+		yAxis: {},
+		series: [{
+			symbolSize: 3,
+			data: [],
+			type: 'scatter'
+		}]
+	};
+	time_and_grade2.setOption(option_time_and_grade2);
+	function grade_select_rendering(){
+		return function(data_json){
+			var release_time = data_json[0]
+			var time = data_json[1]
+			time_and_grade1.setOption({
+				series:[{
+					data:release_time
+				}],
+			});
+			time_and_grade2.setOption({
+				series:[{
+					data:time
+				}],
+			});
+		}
+	}
+
+
+	// 电影评分统计数据获取
+	$.get("http://127.0.0.1:10086/grade",film_grade_rendering(),"json")
+
+	//先获取一次数据渲染
+	text_tpye = $('.type.active').text().trim().replace(/\s+/g,",")
+	text_country = $('.country.active').text().trim().replace(/\s+/g,",")
+	text_language = $('.language.active').text().trim().replace(/\s+/g,",")
+	postdata = {type:text_tpye,country:text_country,language:text_language}
+	$.post('http://127.0.0.1:10086/grade',postdata,grade_select_rendering(),"json")
+	//每次点击，请求一次数据库
+	$('.btn-warning').click(function(){
+		$(document).ready(function(){
+			text_tpye = $('.type.active').text().trim().replace(/\s+/g,",")
+			text_country = $('.country.active').text().trim().replace(/\s+/g,",")
+			text_language = $('.language.active').text().trim().replace(/\s+/g,",")
+			postdata = {type:text_tpye,country:text_country,language:text_language}
+			$.post('http://127.0.0.1:10086/grade',postdata,grade_select_rendering(),"json")
+		})
+	})
+</script>
+<!-- 分析页面二 end-->
+
+<!-- 预测页面 -->
+<script src="./js/slider_card.js"></script><!-- 卡片式轮播图引入 -->
+<script type="text/javascript">
+	// 按下submit_input_data按钮时，提交数据
+	$('#data_input').submit(function(){
+		var ajax_url = "http://127.0.0.1:10086/run"; //表单目标 
+		var ajax_type = $(this).attr('method'); //提交方法 
+		var ajax_data = $(this).serialize(); //表单数据
+		console.log($('#input_attendence input:eq(0)').val())
+		$.ajax({
+			type:ajax_type, //表单提交类型
+			url:ajax_url, //表单提交目标
+			data:ajax_data, //表单数据
+			success:function(msg){
+				$('#predictive_value span:eq(0)').text(msg)
+				attendence_array = new Array($('#input_attendence input:eq(0)').val(),$('#input_attendence input:eq(1)').val(),$('#input_attendence input:eq(2)').val(),$('#input_attendence input:eq(3)').val(),$('#input_attendence input:eq(4)').val(),$('#input_attendence input:eq(5)').val(),$('#input_attendence input:eq(6)').val())
+				film_ratio_array = new Array($('#input_film_ratio input:eq(0)').val(),$('#input_film_ratio input:eq(1)').val(),$('#input_film_ratio input:eq(2)').val(),$('#input_film_ratio input:eq(3)').val(),$('#input_film_ratio input:eq(4)').val(),$('#input_film_ratio input:eq(5)').val(),$('#input_film_ratio input:eq(6)').val())
+				common_rendering(attendence,'上座率',attendence_array)
+				common_rendering(boxoffice,'排片占比',film_ratio_array)
+			}
+		});
+		return false;
+	})
+
+	// 图表制作
+	var attendence = echarts.init(document.getElementById('attendence'),'shine');
+	var boxoffice = echarts.init(document.getElementById('boxoffice'),'shine');
+	common_option = {
+		title: {
+			text: '上座率',
+			left: 'center',
+			top: '10%',
+			textStyle: {
+				color: '#ffffff',
+			},
+		},
+		xAxis: {
+			name: '天',
+			axisLine: {
+				symbol:['none', 'arrow'],
+				symbolSize: [8,10],
+				symbolOffset: [0,8],
+				lineStyle: {
+					type: 'dotted',
+					color: '#ffffff'
+				},
+			},
+			axisLabel: {
+				color: '#ffffff',
+			},
+			data: [1,2,3,4,5,6,7]
+		},
+		yAxis: {
+			name: '%',
+			axisLine: {
+				symbol: ['none', 'arrow'],
+				symbolSize: [8,10],
+				symbolOffset: [0,8],
+				lineStyle: {
+					type: 'dotted',
+					color: '#ffffff'
+				},
+			},
+			axisLabel: {
+				color: '#ffffff',
+			},
+		},
+		series: [{
+			data: [],
+			type: 'line'
+		}]
+	};
+	attendence.setOption(common_option)
+	boxoffice.setOption(common_option)
+	function common_rendering(chart,title_text,value){
+		chart.setOption({
+			title: {
+				text: title_text,
+			},
+			series: [{
+				data: value,
+			}]
+		})
+	};
+
+	var prediction_point = echarts.init(document.getElementById('prediction_point'),'shine');
+	prediction_option = {
+		title: {
+			text: '真实值与预测图比较值',
+			left: 'center',
+			top: '10%',
+			textStyle: {
+				color: '#ffffff',
+			},
+		},
+		tooltip: {
+			show: 'true',
+			trigger: 'axis',
+			axisPointer: {
+				type: 'line',
+			},
+		},
+		xAxis: {
+			name: '天',
+			axisLine: {
+				symbol:['none', 'arrow'],
+				symbolSize: [8,10],
+				symbolOffset: [0,8],
+				lineStyle: {
+					type: 'dotted',
+					color: '#ffffff'
+				},
+			},
+			axisLabel: {
+				color: '#ffffff',
+			},
+			data: range(1,55,1)
+		},
+		yAxis: {
+			name: '%',
+			axisLine: {
+				symbol: ['none', 'arrow'],
+				symbolSize: [8,10],
+				symbolOffset: [0,8],
+				lineStyle: {
+					type: 'dotted',
+					color: '#ffffff'
+				},
+			},
+			axisLabel: {
+				color: '#ffffff',
+			},
+		},
+		series: [{
+			data: [],
+			type: 'line',
+			markLine: {
+				symbol: 'none',
+				// symbolSize: '30',
+				label:{
+					show: true,
+					position: 'middle',
+					formatter: '{b}',
+				},
+				lineStyle: {
+					color:'#FFFF00',
+				},
+				data: [],
+			}
+		}]
+	};
+	prediction_point.setOption(prediction_option)
+	function prediction_rendering(value,value_prediction_point){
+		prediction_point.setOption({
+			series: [{
+				data: value,
+				markLine: {
+					data: [{name:'预测值',xAxis: value_prediction_point}],
+				}
+			}]
+		})
+	};
+
+
+	// 测试电影集的数据获取
+	var imgArr = new Array();
+	var test_collection_data = new Object();
+	$.get("http://127.0.0.1:10086/inquire?name=test_collection",function(data){
+		// json数据说明——0:电影名称，1:电影类型，2:导演，3：编剧，4:主演，5:制片国家，6:语言，7:上映日期，8：豆瓣网站，9:宣传海报，10:剧情简介，11:上座率，12:排片占比，13:综合票房（万元），14:档期，15:临界值，16：临界值预测，17：总票房，18:总票房预测
+		test_collection_data = data
+		$.each(data,function(index,value){
+			//制作轮播图图片集合
+			$.each(value,function(i,v){
+				if (i==9) {
+					let temp_object = {url:'#',imgPath:v};
+					imgArr.push(temp_object);
+				}
+			});
+
+			// 轮播图中的高亮电影初始化——这里是哆啦A梦，index值为1
+			if (index==1){
+				$('.film_description span:eq(0)').text("电影名称："+value[0])
+				$('.film_description span:eq(1)').text("类型："+value[1])
+				$('.film_description span:eq(2)').text("制片国家/地区："+value[5])
+				$('.film_description span:eq(3)').text("语言："+value[6])
+				$('.film_description span:eq(4)').text("上映日期："+value[7])
+				$('.film_description span:eq(5)').text("导演："+value[2])
+				$('.film_description span:eq(6)').text("编剧："+value[3])
+				$('.film_description span:eq(7)').text("主演："+value[4])
+				$('.film_description span:eq(8)').text("电影简介："+value[10])
+				$('#predictive_value span:eq(0)').text(value[16])
+			}
+		});
+		// 轮播图初始化
+		new Swiper({
+			imgArr: imgArr,
+			imgWidth: 120,
+			aniTime: 5000,
+			intervalTime: 5000,
+			scale: 0.7,
+			autoplay: false,
+			autoplay_ofter_click: false,
+			gap: -30,
+			clsSuffix: '-stack'
+		}).init();
+
+		//上座率,排片占比,综合票房折线图初始化
+		common_rendering(attendence,'上座率',data[1][11].split(';'))
+		common_rendering(boxoffice,'排片占比',data[1][12].split(';'))
+		prediction_rendering(data[1][12].split(';').map(x => (x*100).toFixed(1)),parseFloat(data[1][16]))
+
+		// 冰点预测模式,票房预测模式功能切换
+		$("#btn-criticalpoint").click(function(){
+			$('#input_film_ratio').css('display','block')
+			$('#input_box_office').css('display','none')
+			$('#data_input span:eq(1)').text("七天排片占比输入")
+			$('#predictive_value span:eq(1)').text('天')
+
+			if ($('#switch1 span').text()==' 切换输入数据模式 '){
+				$('#predictive_value span:eq(1)').text('天')
+				let $search = new RegExp('scale\\(1\\)');
+				for(key=0; key<$('.swiper-main').children().length; key++){
+					if ($('.swiper-main').children()[key] != undefined) {
+						let style_string = $('.swiper-main').children()[key].children[0].style.cssText
+						if ($search.test(style_string)) {
+								var poster_url = $('.swiper-main').children()[key].children[0].src
+						}
+					}
+				}
+				$.each(data,function(index,value){
+					if (poster_url==value[9]) {
+						common_rendering(boxoffice,'排片占比',value[12].split(';'))
+						prediction_rendering(value[12].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[16]))
+						$('#predictive_value span:eq(0)').text(value[16])
+					}
+				});
+			}
+		});
+		$("#btn-boxoffice").click(function(){
+			$('#input_film_ratio').css('display','none')
+			$('#input_box_office').css('display','block')
+			$('#data_input span:eq(1)').text("七天综合票房输入")
+			$('#predictive_value span:eq(1)').text('万元')
+
+			if ($('#switch1 span').text()==' 切换输入数据模式 '){
+				$('#predictive_value span:eq(1)').text('万元')
+				let $search = new RegExp('scale\\(1\\)');
+				for(key=0; key<$('.swiper-main').children().length; key++){
+					if ($('.swiper-main').children()[key] != undefined) {
+						let style_string = $('.swiper-main').children()[key].children[0].style.cssText
+						if ($search.test(style_string)) {
+								var poster_url = $('.swiper-main').children()[key].children[0].src
+						}
+					}
+				}
+				$.each(data,function(index,value){
+					if (poster_url==value[9]) {
+						common_rendering(boxoffice,'综合票房',value[13].split(';'))
+						prediction_rendering(value[13].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[18]))
+						$('#predictive_value span:eq(0)').text(value[18])
+					}
+				});
+			}
+		});
+		
+		// MutationObserver突变监听，初始化
+		var carousel = new MutationObserver(function (mutations, observer){
+			mutations.some(function (mutation) {
+				// 恢复成测试集模式
+				$('#data_input').css('display','none')
+				$('#prediction_point').css('display','block')
+				$('#switch1 span').text(' 切换输入数据模式 ')
+
+				let $search = new RegExp('scale\\(1\\)');
+				for(let key in mutation.target.children){
+					if (mutation.target.children[key].children!=undefined) {
+						let style_string = mutation.target.children[key].children[0].style.cssText
+						if ($search.test(style_string)) {
+							var poster_url = mutation.target.children[key].children[0].src
+						}
+					}
+				};
+				$.each(data,function(index,value){
+					if (poster_url==value[9]) {
+						$('.film_description span:eq(0)').text("电影名称："+value[0])
+						$('.film_description span:eq(1)').text("类型："+value[1])
+						$('.film_description span:eq(2)').text("制片国家/地区："+value[5])
+						$('.film_description span:eq(3)').text("语言："+value[6])
+						$('.film_description span:eq(4)').text("上映日期："+value[7])
+						$('.film_description span:eq(5)').text("导演："+value[2])
+						$('.film_description span:eq(6)').text("编剧："+value[3])
+						$('.film_description span:eq(7)').text("主演："+value[4])
+						$('.film_description span:eq(8)').text("电影简介："+value[10])
+						common_rendering(attendence,'上座率',value[11].split(';'))
+						
+						if ($('#predictive_value span:eq(1)').text()=='天'){
+							common_rendering(boxoffice,'排片占比',value[12].split(';'))
+							prediction_rendering(value[12].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[16]))
+							$('#predictive_value span:eq(0)').text(value[16])
+						}
+						else{
+							common_rendering(boxoffice,'综合票房',value[13].split(';'))
+							prediction_rendering(value[13].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[18]))
+							$('#predictive_value span:eq(0)').text(value[18])
+						}
+					}
+				});
+				return true;
+			})
+		})
+		// 启用observe方法 DOM_swiper_main
+		var DOM_swiper_main = document.getElementsByClassName('swiper-main')[0];
+		var option_observer = {
+			attributes: true,
+			attributeFilter: ['style'],
+		}
+		carousel.observe(DOM_swiper_main,option_observer);
+
+		// 切换数据输入模式按钮
+		$("#switch1").click(function(){
+			if ($('#switch1 span').text()==' 切换输入数据模式 '){
+				$('#data_input').css('display','block')
+				$('#prediction_point').css('display','none')
+				$('#switch1 span').text('切换测试电影展示模式')
+
+				$('.film_description span:eq(0)').text("电影名称：")
+				$('.film_description span:eq(1)').text("类型：")
+				$('.film_description span:eq(2)').text("制片国家/地区：")
+				$('.film_description span:eq(3)').text("语言：")
+				$('.film_description span:eq(4)').text("上映日期：")
+				$('.film_description span:eq(5)').text("导演：")
+				$('.film_description span:eq(6)').text("编剧：")
+				$('.film_description span:eq(7)').text("主演：")
+				$('.film_description span:eq(8)').text("电影简介：")
+				$('#predictive_value span:eq(0)').text('')
+				common_rendering(attendence,'上座率',[''])
+				common_rendering(boxoffice,'排片占比',[''])
+				common_rendering(boxoffice,'综合票房',[''])
+
+			}else{
+				$('#data_input').css('display','none')
+				$('#prediction_point').css('display','block')
+				$('#switch1 span').text(' 切换输入数据模式 ')
+				let $search = new RegExp('scale\\(1\\)');
+				for(key=0; key<$('.swiper-main').children().length; key++){
+					if ($('.swiper-main').children()[key] != undefined) {
+						let style_string = $('.swiper-main').children()[key].children[0].style.cssText
+						if ($search.test(style_string)) {
+								var poster_url = $('.swiper-main').children()[key].children[0].src
+						}
+					}
+				}
+				$.each(data,function(index,value){
+					if (poster_url==value[9]) {
+						$('.film_description span:eq(0)').text("电影名称："+value[0])
+						$('.film_description span:eq(1)').text("类型："+value[1])
+						$('.film_description span:eq(2)').text("制片国家/地区："+value[5])
+						$('.film_description span:eq(3)').text("语言："+value[6])
+						$('.film_description span:eq(4)').text("上映日期："+value[7])
+						$('.film_description span:eq(5)').text("导演："+value[2])
+						$('.film_description span:eq(6)').text("编剧："+value[3])
+						$('.film_description span:eq(7)').text("主演："+value[4])
+						$('.film_description span:eq(8)').text("电影简介："+value[10])
+						common_rendering(attendence,'上座率',value[11].split(';'))
+						
+						if ($('#predictive_value span:eq(1)').text()=='天'){
+							common_rendering(boxoffice,'排片占比',value[12].split(';'))
+							prediction_rendering(value[12].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[16]))
+							$('#predictive_value span:eq(0)').text(value[16])
+						}
+						else{
+							common_rendering(boxoffice,'综合票房',value[13].split(';'))
+							prediction_rendering(value[13].split(';').map(x => (x*100).toFixed(1)),parseFloat(value[18]))
+							$('#predictive_value span:eq(0)').text(value[18])
+						}
+					}
+				});
+			}
+		})
+
+	},"json")
+</script>
+
+</body>
+</html>
